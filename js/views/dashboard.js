@@ -118,7 +118,7 @@ export function renderDashboard() {
             <div class="rc-label">Reassessment</div>
             <div class="rc-desc">Measure whether the safeguards changed decision behaviour over subsequent assessment cycles.</div>
           </div>
-          <button class="btn-primary" data-action="goToLongitudinal">View Longitudinal Dashboard (mockup) →</button>
+          <button class="btn-primary no-print" data-action="goToLongitudinal">View Longitudinal Dashboard (mockup) →</button>
         </div>
       </div>
     </div>
@@ -128,7 +128,8 @@ export function renderDashboard() {
     </div>
 
     <div class="action-row">
-      <button class="btn-ghost" data-action="restart">↺ RESTART DEMO</button>
+      <button class="btn-ghost no-print" data-action="restart">↺ RESTART DEMO</button>
+      <button class="btn-primary no-print" data-action="downloadReport">⬇ Download PDF report</button>
     </div>
   `;
 }

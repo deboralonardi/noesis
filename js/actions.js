@@ -118,3 +118,7 @@ export function goToDashboard() {
 export function restart() {
   location.reload();
 }
+
+export function downloadReport() {
+  window.print();
+}

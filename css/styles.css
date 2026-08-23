@@ -327,3 +327,25 @@ body {
   .action-row { flex-direction: column; gap: 14px; align-items: stretch; }
   .roadmap-closing { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---------- PRINT (PDF export via window.print(), triggered from the dashboard) ---------- */
+@media print {
+  :root{
+    --bg:#FFFFFF; --bg-grid:#FFFFFF; --surface:#FFFFFF; --surface-raised:#F5F7FA;
+    --line:#D5DBE3; --line-bright:#B9C2CF;
+    --text:#14181F; --text-dim:#43505F; --text-faint:#7A8698;
+    --signal:#0E8F86; --signal-bright:#0B6E67; --signal-dim:#0A5852;
+    --signal-glow: transparent; --signal-glow-strong: transparent;
+    --risk:#C23B2E; --risk-dim:#F1D4D0; --risk-bg:#FBECEB;
+    --moderate:#B06A06; --moderate-dim:#F2DFB9; --moderate-bg:#FBF1DE;
+    --calm:#1F7A4D; --calm-dim:#C9E8D7; --calm-bg:#E9F7F0;
+    --midtone:#35618F;
+  }
+  body { background-image: none; }
+  .no-print { display: none !important; }
+  .wm-mark { animation: none; box-shadow: none; }
+  .app { max-width: 100%; padding: 0 12px 24px; }
+  .hud-panel, .section-panel, .roadmap-panel, .risk-banner, .longi-chart, .roadmap-item {
+    break-inside: avoid; page-break-inside: avoid;
+  }
+}
