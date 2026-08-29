@@ -24,10 +24,9 @@ export function renderLanding() {
         <div class="hero-copy">
           <h1 class="hero-wordmark">NOESIS</h1>
           <div class="hero-kicker">Cognitive Assessment Tool</div>
-          <div class="headline">It's not just what you decide.<br>It's how you decide it.</div>
+          <div class="headline">It's not just <span class="accent">what</span> you decide.<br>It's <span class="accent">how</span> you decide it</div>
           <div class="headline-sub">A structured way to understand the <span class="accent">cognitive factors</span> that drive cyber-risk decisions.</div>
           <div class="hero-underline"></div>
-          <div class="sub">Noesis uses realistic business scenarios to assess the cognitive factors that influence cyber-risk decisions. It focuses on how decisions are formed, tested, and revised under uncertainty — revealing where cognitive vulnerabilities may emerge and where targeted mitigation is needed.</div>
         </div>
         <div class="hero-visual">
           <div class="hero-visual-frame">${heroVisual()}</div>
@@ -35,6 +34,8 @@ export function renderLanding() {
       </div>
 
       <div class="hero-waveform">${waveformSVG(920, 60, 0.8, '#4FE0D6', true)}</div>
+
+      <div class="sub">Noesis uses realistic business scenarios to assess the cognitive factors that influence cyber-risk decisions. It focuses on how decisions are formed, tested, and revised under uncertainty — revealing where cognitive vulnerabilities may emerge and where targeted mitigation is needed.</div>
 
       <div class="landing-grid">
         <div class="landing-cell">
