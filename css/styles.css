@@ -70,7 +70,7 @@ body {
 }
 @keyframes pulse-dot { 0%,100%{ opacity:1; } 50%{ opacity:0.4; } }
 .wm-text { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: 0.02em; color: var(--text); }
-.wm-tagline { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fuchsia); margin-left: 14px; padding-left: 14px; border-left: 1px solid var(--line); }
+.wm-tagline { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text); margin-left: 14px; padding-left: 14px; border-left: 1px solid var(--line); }
 .topbar-right { font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); letter-spacing: 0.04em; }
 
 /* ---------- HUD PANEL FRAME ---------- */
