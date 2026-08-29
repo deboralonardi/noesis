@@ -25,8 +25,11 @@
   --calm-dim: #1B4632;
   --calm-bg: rgba(70,209,138,0.08);
   --midtone: #6C9BD1;
-  --fuchsia: #EA33F7;
-  --fuchsia-glow: rgba(234,51,247,0.35);
+  /* Named --fuchsia for historical reasons; the value is now the rose/crimson-red
+     sampled from the hero image's glow accents, kept distinct from --risk's
+     more orange-leaning coral so the two don't read as the same signal. */
+  --fuchsia: #E14C74;
+  --fuchsia-glow: rgba(225,76,116,0.35);
   --display: 'Sora', sans-serif;
   --body: 'Inter', -apple-system, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
