@@ -80,6 +80,10 @@ UI. **Authenticate with the Netlify account that should own the deployed
 site** — repository ownership and Netlify site ownership are independent;
 whoever is logged into Netlify at deploy time owns the published site.
 
+**Live site:** https://noesis9.netlify.app/ — published under Noemi's
+Netlify account via manual (drag-and-drop) deploy, kept in sync with this
+repository by hand rather than a connected Git integration.
+
 ## A note on originality
 
 The scoring thresholds, evidence rules and mitigation-intervention library
