@@ -256,6 +256,8 @@ body {
 .vuln-level.strong { color: var(--risk); }
 .vuln-level.moderate { color: var(--moderate); }
 .vuln-level.weak { color: var(--calm); }
+.vuln-level.inconsistent { color: var(--text-faint); }
+.vuln-note { font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); font-style: normal; }
 
 .scale-track { position: relative; height: 4px; background: var(--line); border-radius: 2px; }
 .scale-labels { display: flex; justify-content: space-between; margin-top: 8px; }
@@ -275,10 +277,12 @@ body {
 .safeguard-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: var(--surface-raised); border-left: 2px solid var(--line); }
 .safeguard-row.good { border-left-color: var(--calm); }
 .safeguard-row.bad { border-left-color: var(--risk); }
+.safeguard-row.neutral { border-left-color: var(--text-faint); }
 .safeguard-row .sg-name { font-family: var(--body); font-size: 13px; font-weight: 500; color: var(--text); }
 .safeguard-row .sg-obs { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.02em; }
 .safeguard-row.good .sg-obs { color: var(--calm); }
 .safeguard-row.bad .sg-obs { color: var(--risk); }
+.safeguard-row.neutral .sg-obs { color: var(--text-faint); }
 
 /* ---------- MITIGATION ROADMAP (dominant section) ---------- */
 .roadmap-panel {

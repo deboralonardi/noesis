@@ -7,7 +7,8 @@ import { computeOverall } from '../scoring.js';
 function scalePosition(level) {
   if (level === 'weak') return 16.5;
   if (level === 'moderate') return 50;
-  return 83.5;
+  if (level === 'strong') return 83.5;
+  return null; // inconsistent — not placed on the scale
 }
 
 export function renderDashboard() {
@@ -24,7 +25,7 @@ export function renderDashboard() {
   // build roadmap from the intervention library — many-to-many mapping to constructs
   const roadmapItems = INTERVENTIONS
     .map(iv => {
-      const relevantTargets = iv.targets.filter(t => state.results[t] && state.results[t].level !== 'weak');
+      const relevantTargets = iv.targets.filter(t => state.results[t] && (state.results[t].level === 'strong' || state.results[t].level === 'moderate'));
       if (relevantTargets.length === 0) return null;
       const hasStrong = relevantTargets.some(t => state.results[t].level === 'strong');
       return { ...iv, relevantTargets, priority: hasStrong ? 'High' : 'Medium' };
@@ -74,6 +75,14 @@ export function renderDashboard() {
       <div class="section-panel">
         ${SCENARIOS.map(sc => {
           const r = state.results[sc.id];
+          if (r.level === 'inconsistent') {
+            return `
+              <div class="vuln-row">
+                <div class="vuln-top"><span class="vuln-name">${CONSTRUCT_LABELS[sc.id]}</span><span class="vuln-level inconsistent">INCONSISTENT</span></div>
+                <div class="vuln-note">Response pattern not classifiable under this construct's evidence rule (caution decreased after aggravating evidence).</div>
+              </div>
+            `;
+          }
           return `
             <div class="vuln-row">
               <div class="vuln-top"><span class="vuln-name">${CONSTRUCT_LABELS[sc.id]}</span><span class="vuln-level ${r.level}">${r.level.toUpperCase()}</span></div>
@@ -100,6 +109,9 @@ export function renderDashboard() {
         <div class="safeguard-list">
           ${SCENARIOS.map(sc => {
             const r = state.results[sc.id];
+            if (r.level === 'inconsistent') {
+              return `<div class="safeguard-row neutral"><span class="sg-name">${CONSTRUCT_LABELS[sc.id]}</span><span class="sg-obs">Not classifiable — inconsistent response pattern</span></div>`;
+            }
             const txt = r.controlActive ? SAFEGUARD_TEXT[sc.id].good : SAFEGUARD_TEXT[sc.id].bad;
             return `<div class="safeguard-row ${r.controlActive ? 'good' : 'bad'}"><span class="sg-name">${CONSTRUCT_LABELS[sc.id]}</span><span class="sg-obs">${txt}</span></div>`;
           }).join('')}

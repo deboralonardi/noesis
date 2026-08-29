@@ -6,10 +6,15 @@
 import { state } from './state.js';
 
 export function scoreReassessScenario(id, initial, reassess, confidence) {
-  let level = 'weak', controlActive = true;
+  let level = 'weak', controlActive = true, inconsistent = false;
   if (id === 'anchoring') {
     if (initial === 'A' && reassess === 'A') { level = confidence >= 60 ? 'strong' : 'moderate'; controlActive = false; }
     else if (reassess === 'B') { level = 'moderate'; controlActive = true; }
+    else if ((initial === 'B' || initial === 'C') && reassess === 'A') {
+      // Caution decreased after aggravating evidence — not a meaningful test of anchoring,
+      // and not equivalent to "no evidence of vulnerability". Flagged as a separate category.
+      level = 'inconsistent'; controlActive = true; inconsistent = true;
+    }
     else { level = 'weak'; controlActive = true; }
   } else if (id === 'authority') {
     if (reassess === 'A') { level = confidence <= 55 ? 'strong' : 'moderate'; controlActive = false; }
@@ -20,7 +25,7 @@ export function scoreReassessScenario(id, initial, reassess, confidence) {
     else if (reassess === 'B') { level = 'moderate'; controlActive = true; }
     else { level = 'weak'; controlActive = true; }
   }
-  return { level, controlActive, initial, reassess, confidence };
+  return { level, controlActive, inconsistent, initial, reassess, confidence };
 }
 
 export function scoreConfirmationScenario(hypothesis, sources, finalChoice, confidence) {
