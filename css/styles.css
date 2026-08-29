@@ -25,6 +25,8 @@
   --calm-dim: #1B4632;
   --calm-bg: rgba(70,209,138,0.08);
   --midtone: #6C9BD1;
+  --fuchsia: #EA33F7;
+  --fuchsia-glow: rgba(234,51,247,0.35);
   --display: 'Sora', sans-serif;
   --body: 'Inter', -apple-system, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -86,6 +88,15 @@ body {
   color: var(--signal); margin-bottom: 22px; display: flex; align-items: center; gap: 8px;
 }
 .eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--signal); }
+.hero-kicker {
+  font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fuchsia); margin: 0 0 10px;
+}
+.hero-wordmark {
+  font-family: var(--display); font-weight: 800; font-size: 68px; line-height: 0.98;
+  letter-spacing: -0.015em; color: var(--text); margin: 0 0 28px;
+}
+@media (max-width: 800px) { .hero-wordmark { font-size: 46px; } }
 .headline {
   font-family: var(--display); font-weight: 700; font-size: 38px; line-height: 1.2; color: var(--text);
   max-width: 640px; margin: 0 0 18px; letter-spacing: -0.01em;

@@ -6,7 +6,7 @@ export function topbar() {
         <div class="wm-text">NOESIS</div>
         <div class="wm-tagline">Cognitive Cyber Risk</div>
       </div>
-      <div class="topbar-right">DEMO SESSION · ILLUSTRATIVE CONTENT</div>
+      <div class="topbar-right">MVP</div>
     </div>
   `;
 }

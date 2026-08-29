@@ -22,6 +22,8 @@ export function renderLanding() {
     <div class="landing-hero">
       <div class="hero-layout">
         <div class="hero-copy">
+          <div class="hero-kicker">Cognitive Assessment Tool</div>
+          <h1 class="hero-wordmark">NOESIS</h1>
           <div class="eyebrow">Periodic Cognitive Assessment</div>
           <div class="headline">It's not just what you decide.<br>It's how you decide it.</div>
           <div class="headline-sub">A structured way to understand the <span class="accent">cognitive factors</span> that drive cyber-risk decisions.</div>
