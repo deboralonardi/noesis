@@ -89,8 +89,11 @@ export function renderLongitudinal() {
     </div>
 
     <div class="action-row">
-      <button class="btn-ghost" data-action="goToDashboard">← BACK TO ASSESSMENT RESULT</button>
-      <button class="btn-ghost" data-action="restart">↺ Restart assessment</button>
+      <div class="action-row-group">
+        <button class="btn-ghost no-print" data-action="goToDashboard">← BACK TO ASSESSMENT RESULT</button>
+        <button class="btn-ghost no-print" data-action="restart">↺ Restart assessment</button>
+      </div>
+      <button class="btn-primary no-print" data-action="downloadReport">⬇ Download PDF report</button>
     </div>
   `;
 }
