@@ -51,7 +51,7 @@ export function renderDashboard() {
 
   app.innerHTML = `
     ${topbar()}
-    <span class="demo-flag">Illustrative output — generated from fixed demo rules, not a validated scoring model</span>
+    <span class="demo-flag">Illustrative output — generated from fixed scoring rules, not a validated scoring model</span>
     <div class="dash-header">
       <div class="dash-title">Cognitive Cyber Risk Profile</div>
       <div class="dash-sub">SESSION · ${new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase()} · 4 SCENARIOS COMPLETED</div>
@@ -124,11 +124,11 @@ export function renderDashboard() {
     </div>
 
     <div class="footer-note">
-      This profile reflects demonstrative scoring rules used for prototype purposes. In the full framework, each rating derives from the evidence rubric defined in the Cognitive Assessment Model, based on a single scenario per construct — sufficient for a proof of concept, not yet a psychometrically validated measure.
+      This profile reflects illustrative scoring rules used for prototype purposes. In the full framework, each rating derives from the evidence rubric defined in the Cognitive Assessment Model, based on a single scenario per construct — sufficient for a proof of concept, not yet a psychometrically validated measure.
     </div>
 
     <div class="action-row">
-      <button class="btn-ghost no-print" data-action="restart">↺ RESTART DEMO</button>
+      <button class="btn-ghost no-print" data-action="restart">↺ Restart assessment</button>
       <button class="btn-primary no-print" data-action="downloadReport">⬇ Download PDF report</button>
     </div>
   `;

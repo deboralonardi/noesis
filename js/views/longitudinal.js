@@ -85,12 +85,12 @@ export function renderLongitudinal() {
     </div>
 
     <div class="footer-note">
-      This view illustrates the intended longitudinal monitoring concept described in the project roadmap. Data shown here is seeded for demonstration only. Overall index values are framework-derived illustrative scores for prototype demonstration purposes, not psychometrically validated measurements. In the live architecture, cadence between sessions would not be tied directly to score improvement, to avoid incentivising response gaming.
+      This view illustrates the intended longitudinal monitoring concept described in the project roadmap. Data shown here is seeded for illustration only. Overall index values are framework-derived illustrative scores for prototype purposes, not psychometrically validated measurements. In the live architecture, cadence between sessions would not be tied directly to score improvement, to avoid incentivising response gaming.
     </div>
 
     <div class="action-row">
       <button class="btn-ghost" data-action="goToDashboard">← BACK TO ASSESSMENT RESULT</button>
-      <button class="btn-ghost" data-action="restart">↺ RESTART DEMO</button>
+      <button class="btn-ghost" data-action="restart">↺ Restart assessment</button>
     </div>
   `;
 }
